@@ -27,12 +27,10 @@ void setup()
 }
 void loop() 
 {
-  // Look for new cards
   if ( ! mfrc522.PICC_IsNewCardPresent()) 
   {
     return;
   }
-  // Select one of the cards
   if ( ! mfrc522.PICC_ReadCardSerial()) 
   {
     return;
@@ -50,7 +48,7 @@ void loop()
   Serial.println();
   Serial.print("Message : ");
   content.toUpperCase();
-  if (content.substring(1) == "E2 6A 86 19") //Change the UID of the card/cards that you want to give access
+  if (content.substring(1) == "E2 6A 86 19") 
   {
     Serial.println("Authorized access");
     Serial.println();
